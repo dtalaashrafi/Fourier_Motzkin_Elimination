@@ -1,1 +1,3 @@
-asdf
+Fourier-Motzkin elimination with minimal representation. 
+For more details on the algorithm, please refer to 
+https://arxiv.org/abs/1811.01510.
