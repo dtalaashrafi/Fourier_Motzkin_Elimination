@@ -1,3 +1,8 @@
-Fourier-Motzkin elimination with minimal representation. 
+C implementation of the Fourier-Motzkin elimination with minimal representation. 
 For more details on the algorithm, please refer to 
 https://arxiv.org/abs/1811.01510.
+
+Input: a file containing integer coefficients and constant values of the input polyhedron.
+Output: minimal full triangular representation of the polyhedron after removing all variables one by one.
+
+Requested libraries: GMP, FLINT, CDD. 
