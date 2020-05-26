@@ -8,14 +8,13 @@ CC=gcc -O3 -flto -w
 SRC=FME_Support_inequality FME_Support_inequalityOperations FME_Support_linAlg FME_Support_fme FME_Support_projection FME_Support_unrolledll FME_Support_redundancyTest FME_Support_extreme FME_Support_fmeDS main
 OBJ=$(SRC:%=%.o)
 TARGET=minimal
-TEST=test
+TEST=main
 
 #######################################
 all: $(OBJ)
 	@echo $(OBJ)
-	@echo "compiling all"
 	@$(CC) $(COMPILER_PRE_OPTIONS) -Wall $(OBJ) $(COMPILER_OPTIONS) -o $(TARGET).bin
-	./$(TARGET).bin test1.txt 5 10
+#	./$(TARGET).bin test1.txt 5 10
 
 #######################################
 %.o: %.c
@@ -24,8 +23,10 @@ all: $(OBJ)
 
 #######################################
 check: $(OBJ)
-	 $(CC) $(COMPILER_PRE_OPTIONS) -Wall $(OBJ) $(TEST).c $(COMPILER_OPTIONS) -o $(TEST).bin
-	./$(TEST).bin
+	./$(TARGET).bin test1.txt 5 10
+
+#	 $(CC) $(COMPILER_PRE_OPTIONS) -Wall $(OBJ) $(COMPILER_OPTIONS) -o $(TEST).bin
+	
 
 clean: 
 	rm -rf *.o
